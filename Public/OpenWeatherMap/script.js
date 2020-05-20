@@ -40,3 +40,36 @@ $.getJSON(openweathermap + "q=New York&APPID=" + appid, function (data) {
   $(".NYtemp").append(temp);
   $(".NYicon").attr("src", icon);
 });
+
+$(document).ready(function () {
+  $("#getWeatherForcast").click(function () {
+    var iecity = $("#iecity").val();
+    var key = "957c713419b6f9e53e7abd7a9a874f29";
+
+    $.ajax({
+      url: "http://api.openweathermap.org/data/2.5/weather",
+      dataType: "json",
+      type: "GET",
+      data: { q: iecity, appid: key, units: "metric" },
+
+      success: function (data) {
+        var wf = "";
+        $.each(data.weather, function (index, val) {
+          wf +=
+            "<p><b>" +
+            data.name +
+            "</b><img src=http://openweathermap.org/img/w/" +
+            data.weather[0].icon +
+            ".png></p>" +
+            data.main.temp +
+            "&deg;C " +
+            " | " +
+            val.main +
+            ", " +
+            val.description;
+        });
+        $("#showWeatherForcast").html(wf);
+      },
+    });
+  });
+});

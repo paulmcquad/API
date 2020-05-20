@@ -9,6 +9,28 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.21/datatables.min.css"
+    />
+
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.21/datatables.min.js"
+    ></script>
 
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
@@ -16,8 +38,35 @@
   <body>
     <div class="weather-container">
       <img class="icon" />
+      <p class="city"></p>
+      <p class="country"></p>
       <p class="weather"></p>
       <p class="temp"></p>
     </div>
+
+    <table id="table_id" class="display" cellspacing="0">
+      <thead>
+        <tr>
+          <th>City</th>
+          <th>Country</th>
+          <th>Weather</th>
+          <th>Temp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="city"></th>
+          <th class="country"></th>
+          <th class="weather"></th>
+          <th class="temp"></th>
+        </tr>
+        <tr>
+          <th class="NYcity"></th>
+          <th class="UScountry"></th>
+          <th class="NYweather"></th>
+          <th class="NYtemp"></th>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>

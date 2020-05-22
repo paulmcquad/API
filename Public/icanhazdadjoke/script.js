@@ -49,9 +49,21 @@ $(document).ready(function () {
 
       success: function (data) {
         var wf = "";
-        wf += "<p><b>" + data.results[0].id + "</p></b>" + data.results[0].joke;
-        $("#showsearchjoke").html(wf);
-        console.log(data);
+        $.each(data, function (index, val) {
+          var i;
+          wf +=
+            "<p><b>" +
+            data.results[0].id +
+            "</p></b>" +
+            data.results[0].joke +
+            "<p><b> Search Term: " +
+            "</b>" +
+            data.search_term +
+            "</p>";
+
+          $("#showsearchjoke").html(wf);
+          console.log(data);
+        });
       },
     });
   });

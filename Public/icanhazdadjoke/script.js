@@ -49,21 +49,20 @@ $(document).ready(function () {
 
       success: function (data) {
         var wf = "";
-        $.each(data, function (index, val) {
-          var i;
+        var i;
+        for (i in data.results)
           wf +=
             "<p><b>" +
-            data.results[0].id +
+            data.results[i].id +
             "</p></b>" +
-            data.results[0].joke +
+            data.results[i].joke +
             "<p><b> Search Term: " +
             "</b>" +
             data.search_term +
             "</p>";
 
-          $("#showsearchjoke").html(wf);
-          console.log(data);
-        });
+        $("#showsearchjoke").html(wf);
+        console.log(data);
       },
     });
   });

@@ -52,16 +52,18 @@ $(document).ready(function () {
         var i;
         for (i in data.results)
           wf +=
-            "<p><b>" +
+            "<p><b> Total Jokes: </b>" +
+            data.total_jokes +
+            "<b> ID: </b>" +
             data.results[i].id +
-            "</p></b>" +
-            data.results[i].joke +
-            "<p><b> Search Term: " +
-            "</b>" +
+            "<b> Search Term: </b>" +
             data.search_term +
+            "</p><p>" +
+            data.results[i].joke +
             "</p>";
 
         $("#showsearchjoke").html(wf);
+
         console.log(data);
       },
     });

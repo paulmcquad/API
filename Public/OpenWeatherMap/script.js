@@ -1,8 +1,11 @@
 // Setup API and Key
 var openweathermap = "http://api.openweathermap.org/data/2.5/weather?";
 var appid = "957c713419b6f9e53e7abd7a9a874f29";
+var units = "&units=metric";
 
-$.getJSON(openweathermap + "q=Dublin,ie&APPID=" + appid, function (data) {
+$.getJSON(openweathermap + "q=Dublin,ie&APPID=" + appid + units, function (
+  data
+) {
   console.log(data);
 
   var city = data.name;
